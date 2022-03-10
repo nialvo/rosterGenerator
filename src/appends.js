@@ -1,4 +1,31 @@
-*{
+const inquirer = require('inquirer');
+const fs = require('fs');
+function Appends() {};
+
+
+Appends.prototype.rosterInit = ({team},p) => {
+
+    p.a = `./dist/${team}.html`;
+
+
+    const roster = 
+    `<!DOCTYPE html>
+    <html lang="en">
+    
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>${team} Roster</title>
+      <link rel="stylesheet" href="./style.css" />
+    </head>
+    <body>
+    <header>
+        <h1>${team}</h1>
+    </header>
+        `
+
+    const style = 
+    `*{
         font-family: Arial, sans-serif;
     }
     body {
@@ -98,4 +125,43 @@
     
     
     
+    `
+
+    fs.writeFile(p.a,roster,(err)=>{});
+    fs.writeFile(`./dist/style.css`,style,(err)=>{});
+
+}
+
+Appends.prototype.Manager = (M,p) => {
+
+    const appendage = 
+    `<div class="card">
+        <div class="cardHead">
+            <div class="name">${M.name}</div>
+            <div class="jobTitle"><img src="../images/coffee.png">Manager</div>
+        </div>
+        <div class="cardBody">
+            <div class="tab">
+                ID: ${M.id}
+            </div>
+            <div class="tab">
+                Email: <a href='mailto:${M.email}'>${M.email}</a>
+            </div>
+            <div class="tab">
+                Office Number: ${M.officeNumber}
+            </div>
+        </div>
+
+
+
+    </div>
+    </body>`
+
     
+    fs.appendFile(p.a,appendage,(err)=>{});
+    
+}
+
+
+
+module.exports = Appends;
