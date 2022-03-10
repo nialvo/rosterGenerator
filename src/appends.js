@@ -133,7 +133,6 @@ Appends.prototype.rosterInit = ({team},p) => {
 }
 
 Appends.prototype.Manager = (M,p) => {
-
     const appendage = 
     `<div class="card">
         <div class="cardHead">
@@ -151,17 +150,53 @@ Appends.prototype.Manager = (M,p) => {
                 Office Number: ${M.officeNumber}
             </div>
         </div>
-
-
-
-    </div>
-    </body>`
-
-    
+    </div>`
     fs.appendFile(p.a,appendage,(err)=>{});
-    
 }
 
+Appends.prototype.Engineer = (M,p) => {
+    const appendage = 
+    `<div class="card">
+        <div class="cardHead">
+            <div class="name">${M.name}</div>
+            <div class="jobTitle"><img src="../images/diamond.png">Engineer</div>
+        </div>
+        <div class="cardBody">
+            <div class="tab">
+                ID: ${M.id}
+            </div>
+            <div class="tab">
+                Email: <a href='mailto:${M.email}'>${M.email}</a>
+            </div>
+            <div class="tab">
+                Github: <a href='https://github.com/${M.github}' target='_blank'>${M.github}</a>
+            </div>
+        </div>
+    </div>`
+    fs.appendFile(p.a,appendage,(err)=>{});
+}
+
+Appends.prototype.Manager = (M,p) => {
+    const appendage = 
+    `<div class="card">
+        <div class="cardHead">
+            <div class="name">${M.name}</div>
+            <div class="jobTitle"><img src="../images/runner.png">Intern</div>
+        </div>
+        <div class="cardBody">
+            <div class="tab">
+                ID: ${M.id}
+            </div>
+            <div class="tab">
+                Email: <a href='mailto:${M.email}'>${M.email}</a>
+            </div>
+            <div class="tab">
+                School: ${M.school}
+            </div>
+        </div>
+    </div>`
+    fs.appendFile(p.a,appendage,(err)=>{});
+}
 
 
 module.exports = Appends;
