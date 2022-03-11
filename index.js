@@ -1,19 +1,18 @@
-//const fs = require('fs');
-//const inquirer = require('inquirer');
+//functions needed to initiate
 const Prompts = require('./src/prompts.js')
 const prompts = new Prompts();
 const Adds = require('./src/adds.js')
 const adds = new Adds();
 const Appends = require('./src/appends.js')
 const appends = new Appends();
-let path={//name of the created file
+
+//path of the created html file
+let path={
     a:``
 };
 
-
-
-
-prompts.Init().then((answers)=>{appends.rosterInit(answers,path)}).then(()=>{adds.Manager(path)});//initiate
+//initiate
+prompts.Init().then((answers)=>{appends.rosterInit(answers,path)}).then(()=>{adds.Manager(path)});
 
 
 

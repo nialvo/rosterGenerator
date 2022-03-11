@@ -176,7 +176,7 @@ Appends.prototype.Engineer = (M,p) => {
     fs.appendFile(p.a,appendage,(err)=>{});
 }
 
-Appends.prototype.Manager = (M,p) => {
+Appends.prototype.Intern = (M,p) => {
     const appendage = 
     `<div class="card">
         <div class="cardHead">
@@ -195,6 +195,14 @@ Appends.prototype.Manager = (M,p) => {
             </div>
         </div>
     </div>`
+    fs.appendFile(p.a,appendage,(err)=>{});
+}
+
+Appends.prototype.Finish = (p) => {
+    const appendage = 
+    `</body>
+
+    </html>`
     fs.appendFile(p.a,appendage,(err)=>{});
 }
 

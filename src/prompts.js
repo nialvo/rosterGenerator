@@ -7,18 +7,18 @@ Prompts.prototype.Manager = () => {
 
             type: 'input',
             name: 'name',
-            message: 'Enter employee name.',
+            message: 'Enter manager name.',
         },
         {
             type: 'input',
             name: 'id',
             message: 'Enter employee ID number.',
             validate: (answer) => {
-                const pass = answer.match(/^[1-9]\d*$/);
+                const pass = answer.match(/^[0-9]\d*$/);
                 if (pass) {
                   return true;
                 }
-                return 'Please enter a positive number greater than zero.';
+                return 'Please enter a positive number.';
             },
         },
         {
@@ -38,11 +38,11 @@ Prompts.prototype.Manager = () => {
             name: 'office',
             message: 'Enter employee office number.',
             validate: (answer) => {
-                const pass = answer.match(/^[1-9]\d*$/);
+                const pass = answer.match(/^[0-9]\d*$/);
                 if (pass) {
                   return true;
                 }
-                return 'Please enter a positive number greater than zero.';
+                return 'Please enter a positive number.';
             },
         },
         {
@@ -66,11 +66,11 @@ Prompts.prototype.Engineer = () => {
             name: 'id',
             message: 'Enter employee ID number.',
             validate: (answer) => {
-                const pass = answer.match(/^[1-9]\d*$/);
+                const pass = answer.match(/^[0-9]\d*$/);
                 if (pass) {
                   return true;
                 }
-                return 'Please enter a positive number greater than zero.';
+                return 'Please enter a positive number.';
             },
         },
         {
@@ -104,18 +104,18 @@ Prompts.prototype.Intern = () => {
 
             type: 'input',
             name: 'name',
-            message: 'Enter employee name.',
+            message: 'Enter intern name.',
         },
         {
             type: 'input',
             name: 'id',
             message: 'Enter employee ID number.',
             validate: (answer) => {
-                const pass = answer.match(/^[1-9]\d*$/);
+                const pass = answer.match(/^[0-9]\d*$/);
                 if (pass) {
                   return true;
                 }
-                return 'Please enter a positive number greater than zero.';
+                return 'Please enter a positive number.';
             },
         },
         {
